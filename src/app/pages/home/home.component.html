@@ -1,0 +1,21 @@
+<!-- <div  class="card-columns mt-3 animate__animated animate__fadeIn">
+
+    <div class="card puntero" *ngFor="let cancion of nuevasCanciones">
+      <img [src]="cancion.images | noimage" class="card-img-top border-primary" alt="...">
+      
+      <div class="card-body">
+        <h5 class="card-title text-center">{{cancion.name}}</h5>
+        <p class="card-text">
+            <span class="badge badge-pill badge-primary text-center" *ngFor="let artist of cancion.artists">{{artist.name}}</span>
+            <span class="badge badge-pill badge-secondary text-center"> 
+              Nº Tracks: <span clas="badge badge-light text-center"> {{cancion.total_tracks}} </span>
+            </span>
+        </p>
+      </div>
+    </div>
+
+</div>    -->
+
+<!-- NUESVASCANCIONES EXISTEN EN COMPONENT.TS -->
+<app-loading *ngIf="loading"></app-loading>
+<app-tarjetas [items]="nuevasCanciones">  </app-tarjetas>
