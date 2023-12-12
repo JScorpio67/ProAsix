@@ -2,10 +2,12 @@
 
 
 <div class="row animate__animated animate__fadeIn" *ngIf="!loadingArtista" >
-    <div class="col-2">
-        <img src="assets/img/noimage.png" class="img-thumbnail img-circle" >
+    <div class="col-3">
+    <!--<div class="col-2"> -->
+        <img [src]="artista.images | noimage" class="img-fluid img-thumbnail " >
     </div>
-    <div class="col">
+    <!--<div class="col">-->
+    <div class="col-4">
         <h3>{{artista.name}}</h3>
         <p><strong>Popularidad:</strong><span class="badge badge-pill badge-secondary">{{artista.popularity}}</span></p>
         <p><strong>Seguidores:</strong><span class="badge badge-pill badge-success">{{artista.followers.total}}</span></p>

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SpotifyService } from 'src/app/services/spotify.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 import { LoadingComponent } from '../shared/loading/loading.component';
 
 @Component({
@@ -15,6 +16,8 @@ export class SearchComponent{
   loading?:boolean;
   logMsg?:boolean;
   error?:boolean;
+
+
 
   constructor(private spotify:SpotifyService) { }
 
@@ -49,5 +52,6 @@ export class SearchComponent{
       this.artistas=[];
     }
   }
+
 
 }
