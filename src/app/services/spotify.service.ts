@@ -14,7 +14,7 @@ export class SpotifyService {
   //METODO QUE REUTILIZAREMOS PARA ABREVIAR OTROS METODOS, URL SPOTIFY   
   getQuery(query:string ){
     const headers = new HttpHeaders({
-      'Authorization' : 'Bearer BQCgzqKlMZZ6KCCUBTX5qWM1klZCzMs4e87SLBoQxrj8R4ZXIh7WL6Sh32hbZSRb6mjcjMURkVU7xtS_agJKvLskt49qGWIOkUoD8RspIQssURXHG84'
+      'Authorization' : 'Bearer BQB1OFweD_6Ss0cigxlvO1aHAPZeEV8nwW02WIMRQLVbNuaiLPf7r2LJ9EmDQNrSnFhA0zOUL8KQJXbLgh6LEy10foDmjkLfWE31SfQVv7VYdnE4Pts'
    
     });
     return this.http.get(`${URL}/${query}`, {headers})
@@ -22,7 +22,6 @@ export class SpotifyService {
 
   //METODO NUEVOS ALBUMES
   getNewReleases (){
-    
     return this.getQuery('browse/new-releases?limit=20').pipe(
       map((res:any)=>{
         return res.albums.items;
@@ -32,7 +31,6 @@ export class SpotifyService {
 
   //METODO ARTISTAS, PORTADAS, ETC
   getArtistas(termino:string){
-
     return this.getQuery(`search?query=${termino}&type=artist&market=es&limit=15`).pipe(
       map((res:any)=>{
         return res.artists.items;
@@ -48,13 +46,11 @@ export class SpotifyService {
 
   //METODO TRACKS
   getTopTracks(id:string) {
-    return this.getQuery(`artist/${id}/top-tracks`)
+    return this.getQuery(`artists/${id}/top-tracks?market=es`).pipe(
+      map((res:any)=>{
+        return res.tracks;
+      })
+    );
   }
+
 } 
-
-
-
-  //METODO TRACKS
-  //getTopTracks(id:string) {
-    //return this.getQuery(`artist/${id}/top-tracks`)
-  //}

@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+/*font-family: 'Playfair Display', serif;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+/*font-family: 'Bungee Spice', sans-serif;*/
 body {
     background-color: black;
     color: white !important;
@@ -34,6 +39,35 @@ hr {
 .img-thumb {
     width: 50px;
     height: 50px;
+}
+
+.img-tab {
+    width: 150px;
+    height: 150px;
+}
+
+/*.td-album{
+    background-color: rgb(61, 60, 59);
+    display: flex;
+    height: 150px;
+    justify-content: end;
+    align-items: center;
+}*/
+thead{
+
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+}
+
+td{
+    
+    height: 160px;
+    background-color: rgb(61, 60, 59);
+    align-items: center;
+    text-align: center;
+    margin:0.5em;
+    font-family: 'Playfair Display', serif;
+    
 }
 
 .colorFontTable{

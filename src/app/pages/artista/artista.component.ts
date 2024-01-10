@@ -12,6 +12,9 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 export class ArtistaComponent{
 
   artista:any={};
+
+  //topTracks almacenara todo el array
+  topTracks:any[] = [];
   loadingArtista:boolean;
 
   constructor(private spotify:SpotifyService, private router:ActivatedRoute) {
@@ -22,6 +25,9 @@ export class ArtistaComponent{
       //console.log(params)
       //la pasamos el parametro ID
       this.getInfoArtista(params[`id`]);
+
+      //incializamos con el nombre del metodo que creamos en spotify.service
+      this.getTopTracks(params[`id`]);
     })
   }
 
@@ -37,6 +43,16 @@ export class ArtistaComponent{
       //para cuando se haya cargado la info, dejara de salir la carga
       this.loadingArtista=false;
     })
-
   }
+
+  //NUEVO METODO, info musica
+  getTopTracks(id:string) {
+    this.spotify.getTopTracks(id).subscribe(res=>{
+      console.log(res);
+      this.topTracks = res;
+    })
+  }
+  
+
+  
 }

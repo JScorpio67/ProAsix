@@ -27,19 +27,21 @@
             <table class="table colorFontTable">
                 <thead>
                     <tr>
-                        <th>Foto</th>
+                        <th></th>
                         <th>Album</th>
                         <th>Canción</th>
                         <th>Vista Previa</th>
                     </tr>
                 </thead>   
-                <tbody >
-                    <tr>
+
+                <tbody>
+                    <!-- track es un nombre cualquiera y topTracks existe en .ts -->
+                    <tr *ngFor="let track of topTracks">
                         <td>
-                            <img src="assets/img/noimage.png" class="img-thumb" >
+                            <img [src]="track.album.images | noimage" class="img-tab" >
                         </td>
-                        <td>album</td>
-                        <td>musica</td>
+                        <td style="vertical-align:middle;">{{track.album.name}}</td>
+                        <td style="vertical-align:middle;">{{track.name}}</td>
                         <td>
                             frame
                         </td>
