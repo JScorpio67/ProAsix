@@ -1,0 +1,7 @@
+.barra{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+    background-color: antiquewhite;
+}

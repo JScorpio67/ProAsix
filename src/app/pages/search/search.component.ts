@@ -51,6 +51,8 @@ export class SearchComponent{
       this.logMsg=true;
       this.artistas=[];
     }
+
+    //this.router.navigate([`/artist`, artistaId])
   }
 
 

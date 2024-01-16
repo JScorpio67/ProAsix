@@ -14,7 +14,7 @@ export class SpotifyService {
   //METODO QUE REUTILIZAREMOS PARA ABREVIAR OTROS METODOS, URL SPOTIFY   
   getQuery(query:string ){
     const headers = new HttpHeaders({
-      'Authorization' : 'Bearer BQB1OFweD_6Ss0cigxlvO1aHAPZeEV8nwW02WIMRQLVbNuaiLPf7r2LJ9EmDQNrSnFhA0zOUL8KQJXbLgh6LEy10foDmjkLfWE31SfQVv7VYdnE4Pts'
+      'Authorization' : 'Bearer BQCSSNZrRQD8xcgxM5ck-w7vQdjulBLpnPmMMEK88lT5eNXtnizIQNEoOuIZKhq6zO2RO4mw8a5uaD_ZlioZk6KRB-S_-vYibgtc9yUsB1UjevbOk2k'
    
     });
     return this.http.get(`${URL}/${query}`, {headers})
@@ -22,12 +22,13 @@ export class SpotifyService {
 
   //METODO NUEVOS ALBUMES
   getNewReleases (){
-    return this.getQuery('browse/new-releases?limit=20').pipe(
+    return this.getQuery('browse/new-releases?limit=24').pipe(
       map((res:any)=>{
         return res.albums.items;
       })
     );
   }
+
 
   //METODO ARTISTAS, PORTADAS, ETC
   getArtistas(termino:string){
@@ -52,5 +53,12 @@ export class SpotifyService {
       })
     );
   }
+
+
+  //METODO TOPARTISTAS
+ // getTopArtists (){
+   // return this.getQuery{`artists`};
+  //}
+
 
 } 
