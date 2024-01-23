@@ -11,6 +11,7 @@ import { ArtistaComponent } from './pages/artista/artista.component';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { TarjetasComponent } from './pages/tarjetas/tarjetas.component';
 import { LoadingComponent } from './pages/shared/loading/loading.component';
+import { LinkseguroPipe } from "./pipes/linkseguro.pipe";
 
 @NgModule({
     declarations: [
@@ -29,7 +30,8 @@ import { LoadingComponent } from './pages/shared/loading/loading.component';
         AppRoutingModule,
         HttpClientModule,
         NoimagePipe,
-        LoadingComponent
+        LoadingComponent,
+        LinkseguroPipe
     ]
 })
 export class AppModule { }

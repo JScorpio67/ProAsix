@@ -14,7 +14,7 @@ export class SpotifyService {
   //METODO QUE REUTILIZAREMOS PARA ABREVIAR OTROS METODOS, URL SPOTIFY   
   getQuery(query:string ){
     const headers = new HttpHeaders({
-      'Authorization' : 'Bearer BQDq2RcZ8_IKoUpQGAn8sOmBq2L4M-6dpdqsk_RcyimRfdu6N1wX72GuHVnig4PeXw6hj_vTmKNFCCGsFK6h_8vgOeKskx5BN78PwQe4fDXO-54Gob8'
+      'Authorization' : 'Bearer BQC0OFQI8KlIN_elac219JeTV4h9nLBk9-Tx7KXd_QY4YWQHx9H_0a97PHQLkL_FLj8uXSoeIa6__-24YC5-kyULCUG6UeIlrhGR1kMD3d8FotucXSk'
    
     });
     return this.http.get(`${URL}/${query}`, {headers})

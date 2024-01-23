@@ -7,3 +7,41 @@
 h3{
     font-family: 'Bungee Spice', sans-serif;
 }
+
+
+
+.tr_head{
+    margin: 0;
+    padding: 0;
+    height: 3rem;
+    background-color: rgb(82, 58, 27);
+}
+
+
+.tr_body{
+    margin: 0;
+    padding: 0;
+    height: 14rem;
+}
+
+.img-tab{
+    height: 180px;
+    width: 180px;
+    border-radius: 10%;
+}
+
+.img_album{
+    margin: 0;
+    padding: 0;
+    /* padding-bottom: .75rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* height: 209px; */
+    height: 14rem;
+    border: 0;
+}
+
+.song_name{
+    font-size: 20px;
+}

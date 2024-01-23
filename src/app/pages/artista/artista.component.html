@@ -22,12 +22,12 @@
     
 </div>    
 
-    <div class="row text-center  mt-5">
+    <div class="row text-center mt-5">
         <div class="col">
             <table class="table colorFontTable">
                 <thead>
-                    <tr>
-                        <th></th>
+                    <tr class="tr_head">
+                        <!-- <th></th> -->
                         <th>Album</th>
                         <th>Canción</th>
                         <th>Vista Previa</th>
@@ -36,15 +36,13 @@
 
                 <tbody>
                     <!-- track es un nombre cualquiera y topTracks existe en .ts -->
-                    <tr *ngFor="let track of topTracks">
-                        <td>
-                            <img [src]="track.album.images | noimage" class="img-tab" >
-                        </td>
-                        <td style="vertical-align:middle;">{{track.album.name}}</td>
-                        <td style="vertical-align:middle;">{{track.name}}</td>
+                    <tr *ngFor="let track of topTracks" class="tr_body">
+                        <td class="img_album"> <img [src]="track.album.images | noimage" class="img-tab"> {{track.album.name}} </td>
+                        <!-- <td style="vertical-align:middle;"> {{track.album.name}}</td> -->
+                        <td class="song_name" style="vertical-align:middle;">{{track.name}}</td>
                         <td style="vertical-align:middle;">
                             <!--la url de la preview no es segura-->
-                           <!-- <audio src="track.preview_url" controls></audio>-->
+                            <!--track.uri es el enlace de la cancion, asi es como llega en el array-->
                             <iframe [src]="track.uri | linkseguro" width="300" height="80" [frameBorder]="0"  allow="encrypted-media"></iframe>
                             
                         </td>
