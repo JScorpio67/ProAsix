@@ -1,0 +1,11 @@
+.card-text{
+    padding: .5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: brown; */
+}
+
+.card-body{
+    background-color: rgb(174, 174, 174);
+}
