@@ -10,7 +10,7 @@
   
   <!--BOTONS DEL NAVBAR-->
   <!--<div class="collapse navbar-collapse" id="navbarSupportedContent"></div>-->
-  <div class="collapse navbar-collapse"  id="navbarSupportedContent">
+  <div class="collapse navbar-collapse"  id="navbarSupportedContent"  style="vertical-align:middle;">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="home" >Inicio</a>
@@ -28,6 +28,12 @@
           <a class="dropdown-item" href="#">Top Playlists</a>
         </div>
       </li>  
+      <li *ngIf="!userLoginOn" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="search">Iniciar Sesión</a>
+      </li>   
+      <li *ngIf="userLoginOn" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="search">Cerrar Sesion</a>
+      </li>   
     </ul>
   
   </div>
