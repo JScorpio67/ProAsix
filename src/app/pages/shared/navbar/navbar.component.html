@@ -1,7 +1,7 @@
 <!--<nav class="navbar navbar-expand-sm navbar-dark bg-dark"> -->
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
   
-    <a class="navbar-brand" href="#"> <img src="assets/img/logo.png" width="30" height="30" alt="" loading="lazy"> FiestApp </a>
+    <a class="navbar-brand" href="/nohome"> <img src="assets/img/logo.png" width="30" height="30" alt="" loading="lazy"> FiestApp </a>
 
   <!--BOTON VISTA MOVIL-->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,10 +29,10 @@
         </div>
       </li>  
       <li *ngIf="!userLoginOn" class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="search">Iniciar Sesión</a>
+        <a class="nav-link" routerLink="/iniciar-sesion">Iniciar Sesión</a>
       </li>   
       <li *ngIf="userLoginOn" class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="search">Cerrar Sesion</a>
+        <a class="nav-link" routerLink="/nohome">Cerrar Sesion</a>
       </li>   
     </ul>
   
