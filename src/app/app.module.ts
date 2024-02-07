@@ -12,6 +12,8 @@ import { NoimagePipe } from './pipes/noimage.pipe';
 import { TarjetasComponent } from './pages/tarjetas/tarjetas.component';
 import { LoadingComponent } from './pages/shared/loading/loading.component';
 import { LinkseguroPipe } from "./pipes/linkseguro.pipe";
+import { ReactiveFormsModule } from '@angular/forms';
+//import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -22,6 +24,7 @@ import { LinkseguroPipe } from "./pipes/linkseguro.pipe";
         ArtistaComponent,
         // nuevo, prueba
         TarjetasComponent,
+    
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -31,7 +34,9 @@ import { LinkseguroPipe } from "./pipes/linkseguro.pipe";
         HttpClientModule,
         NoimagePipe,
         LoadingComponent,
-        LinkseguroPipe
+        LinkseguroPipe,
+        ReactiveFormsModule,
+        //FormsModule
     ]
 })
 export class AppModule { }
