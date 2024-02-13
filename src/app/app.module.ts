@@ -12,8 +12,10 @@ import { NoimagePipe } from './pipes/noimage.pipe';
 import { TarjetasComponent } from './pages/tarjetas/tarjetas.component';
 import { LoadingComponent } from './pages/shared/loading/loading.component';
 import { LinkseguroPipe } from "./pipes/linkseguro.pipe";
+import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-//import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
     declarations: [
@@ -22,9 +24,9 @@ import { ReactiveFormsModule } from '@angular/forms';
         SearchComponent,
         NavbarComponent,
         ArtistaComponent,
+        LoginComponent,
         // nuevo, prueba
-        TarjetasComponent,
-    
+        TarjetasComponent, 
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -35,8 +37,9 @@ import { ReactiveFormsModule } from '@angular/forms';
         NoimagePipe,
         LoadingComponent,
         LinkseguroPipe,
+        CommonModule,
         ReactiveFormsModule,
-        //FormsModule
+        FormsModule
     ]
 })
 export class AppModule { }
