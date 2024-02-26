@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { LoginComponent } from './pages/login/login.component';
         ArtistaComponent,
         LoginComponent,
         // nuevo, prueba
-        TarjetasComponent, 
+        TarjetasComponent,
+        SignupComponent 
     ],
     providers: [],
     bootstrap: [AppComponent],

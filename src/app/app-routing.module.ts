@@ -6,16 +6,27 @@ import { SearchComponent } from './pages/search/search.component';
 import { ArtistaComponent } from './pages/artista/artista.component';
 import { NohomeComponent } from './pages/nohome/nohome.component';
 import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 
 
 export const routes:Routes =[
   //redireccion al inicio, si no se ha especificado la ruta
   {path:'', redirectTo:'/nohome', pathMatch:'full'},
-
+  
+  //PAGINA SIN INICIAR SESION
   {path:'inicio', component:NohomeComponent},
-  {path:'iniciar-sesion', component:LoginComponent},
+  
+  //PAGINA PARA REGISTRARSE
+  {path:'signup', component:SignupComponent},
+  
+  //PAGINA INICIAR SESION
+  {path:'login', component:LoginComponent},
+
+  //PAGINA CON SESION INCIADA
   {path:'home', component:HomeComponent},
+
+  //PAGINA BUSQUEDA
   {path: 'search', component: SearchComponent},
   {path: 'artist/:id', component: ArtistaComponent},
   
