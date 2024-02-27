@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //IMPORTAMOS LA CLASE
 import { FormBuilder, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+//import { Router } from 'express';
 
 
 @Component({
@@ -18,8 +20,8 @@ export class LoginComponent implements OnInit {
     email:['ejemplo@gmail.com',[Validators.required, Validators.email]],
     pass:['',[Validators.required]],
   })
- 
-  constructor(private formBuilder:FormBuilder) { }
+  //private nombre:Router | Servicio de rutas
+  constructor(private formBuilder:FormBuilder, private router:Router) { }
   
   ngOnInit():void{
   }
@@ -27,9 +29,14 @@ export class LoginComponent implements OnInit {
   //METODO QUE LLAMAREMOS, PARA EL BOTON INICIAR SESION
   login(){
     if(this.loginFormulario.valid){
-      console.log("Llamar al servicio de Login")
+      console.log("Llamar al servicio de Login");
+      //NAVEGACION DEPSUES DEL LOGIN
+      this.router.navigateByUrl('/home');
+      //REINICIO DEL FORMULARIO
+      this.loginFormulario.reset();
     } else {
-      alert("Error al ingresar los datos")
+      this.loginFormulario.markAllAsTouched();
+      alert("Error al ingresar los datos");
     }
   }
 

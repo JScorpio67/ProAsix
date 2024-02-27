@@ -1,5 +1,37 @@
+*{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    background-color: rgb(96, 172, 239);
+    /* height: 100%;
+    width: 100%; */
+    /* margin: 5rem; */
+
+}
+
 form{
-    margin: 10rem;
-    padding: 6rem;
-    background-color: rgb(146, 98, 35);
+    /* margin: 10rem;
+    padding: 6rem;  */
+    /* color: rgb(146, 98, 35);
+
+    height: 50%;
+    width: 50%; */
+}
+form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 4rem;
+    /* margin: 2rem; */
+}
+
+input{
+    /* padding: 1rem; */
+    /* background-color: rgb(18, 18, 18); */
+}
+
+.form-control{
+    /* border-color: black; */
 }
