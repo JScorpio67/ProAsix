@@ -1,37 +1,44 @@
-*{
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-    background-color: rgb(96, 172, 239);
-    /* height: 100%;
-    width: 100%; */
-    /* margin: 5rem; */
-
-}
-
 form{
-    /* margin: 10rem;
-    padding: 6rem;  */
-    /* color: rgb(146, 98, 35);
-
-    height: 50%;
-    width: 50%; */
-}
-form{
+    /* background-color: rgb(183, 183, 183); */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 4rem;
+    height: 70%;
+    width: 50%;
+    padding: 1rem;
     /* margin: 2rem; */
+    /* display: flex;
+    flex-direction: column;
+    align-items: start; */
+    border-color: none;
 }
 
-input{
-    /* padding: 1rem; */
-    /* background-color: rgb(18, 18, 18); */
+.divForm{
+    /* background-color: tomato; */
+    margin: 1rem; /*ESPACIO FUERA*/
+    padding: 1rem; /*ESPACIO DENTRO*/
+    /* width: 100%;
+    height: 120px; */
 }
 
-.form-control{
-    /* border-color: black; */
+input:focus {
+    outline: unset;
 }
+
+.ng-valid {
+    border-left: 3px solid green;
+}
+
+.ng-invalid {
+    border-left: 3px solid red;
+}  
+
+/* .ng-valid:not(form).ng-touched {
+    border-left: 5px rgb(0, 160, 0) ;
+}
+
+.ng-invalid:not(form).ng-touched {
+    border-left: 5px rgb(255, 21, 21) ;
+} */
+

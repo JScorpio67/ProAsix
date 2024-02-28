@@ -26,6 +26,14 @@ export class LoginComponent implements OnInit {
   ngOnInit():void{
   }
 
+  get email(){
+    return this.loginFormulario.controls.email;
+  }
+
+  get password(){
+    return this.loginFormulario.controls.pass;
+  }
+
   //METODO QUE LLAMAREMOS, PARA EL BOTON INICIAR SESION
   login(){
     if(this.loginFormulario.valid){

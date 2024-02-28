@@ -75,10 +75,18 @@ td{
 }
 
 /*FORMULARIOS, CLASES DE CONTROL DE ESTADO*/
-.ng-valid:not(form).ng-touched {
-    border: 5px green ;
+input:focus {
+    outline: unset;
+  }
+
+/* .ng-valid:not(form).ng-touched {
+    border-left: 5px rgb(0, 160, 0) ;
 }
 
 .ng-invalid:not(form).ng-touched {
-    border: 5px red ;
-}
+    border-left: 5px rgb(255, 21, 21) ;
+} */
+
+/* .ng-invalid {
+    border-left: 3px solid red;
+} */
