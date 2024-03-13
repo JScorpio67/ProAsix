@@ -12,10 +12,11 @@ import { SignupComponent } from './pages/signup/signup.component';
 
 export const routes:Routes =[
   //redireccion al inicio, si no se ha especificado la ruta
-  {path:'', redirectTo:'/nohome', pathMatch:'full'},
+  {path:'', redirectTo:'nohome', pathMatch:'full'},
   
   //PAGINA SIN INICIAR SESION
-  {path:'inicio', component:NohomeComponent},
+  // {path:'inicio', component:NohomeComponent},
+  {path:'nohome', component:NohomeComponent},
   
   //PAGINA PARA REGISTRARSE
   {path:'signup', component:SignupComponent},

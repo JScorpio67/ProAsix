@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 //IMPORTAMOS LA CLASE
 import { FormBuilder, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/auth/login.service';
+import { LoginRequest } from 'src/app/services/auth/loginRequest';
 //import { Router } from 'express';
 
 
@@ -20,8 +22,8 @@ export class LoginComponent implements OnInit {
     email:['ejemplo@gmail.com',[Validators.required, Validators.email]],
     pass:['',[Validators.required]],
   })
-  //private nombre:Router | Servicio de rutas
-  constructor(private formBuilder:FormBuilder, private router:Router) { }
+  //private nombre:Router | Servicio de rutas   || inyectamos el metodo login del servicio login
+  constructor(private formBuilder:FormBuilder, private router:Router, private loginServicio:LoginService ) { }
   
   ngOnInit():void{
   }
@@ -37,11 +39,14 @@ export class LoginComponent implements OnInit {
   //METODO QUE LLAMAREMOS, PARA EL BOTON INICIAR SESION
   login(){
     if(this.loginFormulario.valid){
-      console.log("Llamar al servicio de Login");
+      //console.log("Llamar al servicio de Login");
+      this.loginServicio.login(this.loginFormulario.value as LoginRequest);
       //NAVEGACION DEPSUES DEL LOGIN
       this.router.navigateByUrl('/home');
+      
       //REINICIO DEL FORMULARIO
       this.loginFormulario.reset();
+
     } else {
       this.loginFormulario.markAllAsTouched();
       alert("Error al ingresar los datos");
