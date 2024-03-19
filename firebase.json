@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "spotify-app",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

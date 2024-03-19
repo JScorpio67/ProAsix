@@ -98,6 +98,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "spotify-app:build:production",
+              "serveTarget": "spotify-app:serve:production"
+            },
+            "development": {
+              "buildTarget": "spotify-app:build:development",
+              "serveTarget": "spotify-app:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

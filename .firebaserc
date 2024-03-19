@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "proyectoasix-86ff1": {
+      "hosting": {
+        "spotify-app": [
+          "proyectoasix-86ff1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "proyectoasix-86ff1"
+  }
+}
