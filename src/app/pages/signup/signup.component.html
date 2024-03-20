@@ -1,4 +1,4 @@
-<form [formGroup]="FormularioSignup">
+<!-- <form [formGroup]="FormularioSignup">
     <div class="mb-3 form-row" >
         <div class="col">
           <label for="exampleInputEmail1" class="form-label"> nombre</label>
@@ -22,4 +22,38 @@
 
     
     <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-  </form>
+  </form> -->
+
+
+  <form [formGroup]="FormularioSignup">
+    <div class="divForm">
+      <label> Email </label>
+      <input type="email" class="form-control"  placeholder="Enter email" formControlName="email">
+      
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger" >
+        <div *ngIf="email.errors?.['required']"> 
+          El email es obligatorio
+        </div>
+        <div *ngIf="email.errors?.['email']">
+          El email debe tener un formato valido
+        </div>  
+      </div>
+    </div>
+  
+    <div class="divForm">
+      <label> Contraseña</label>
+      <input type="password" class="form-control" placeholder="Contraseña" formControlName="pass">
+    
+      <div *ngIf="password.invalid && (email.dirty || password.touched)" class="text-danger" >
+        <div *ngIf="password.errors?.['required']"> 
+          La contraseña es obligatoria
+        </div>
+      </div>
+    </div>
+  
+    <div class="divForm">
+    <button type="submit" (click)="sign()" class="btn btn-primary">Iniciar Sesión</button>
+    </div>
+  
+  </form>  
+  
