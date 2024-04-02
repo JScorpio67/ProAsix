@@ -26,7 +26,30 @@
 
 
   <form [formGroup]="FormularioSignup">
-    <div class="divForm">
+
+    <div class="divForm mb-3">
+      <label> Nombre </label>
+      <input type="text" class="form-control"  placeholder="Nombre" formControlName="nombre">
+      
+      <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="text-danger" >
+        <div *ngIf="nombre.errors?.['required']"> 
+          El nombre es obligatorio
+        </div>
+      </div>
+    </div>
+
+    <div class="divForm mb-3">
+      <label> Apellidos </label>
+      <input type="text" class="form-control"  placeholder="Apellidos" formControlName="apellidos">
+      
+      <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="text-danger" >
+        <div *ngIf="nombre.errors?.['required']"> 
+          El nombre es obligatorio
+        </div>
+      </div>
+    </div>
+
+    <div class="divForm mb-3">
       <label> Email </label>
       <input type="email" class="form-control"  placeholder="Enter email" formControlName="email">
       
@@ -40,7 +63,7 @@
       </div>
     </div>
   
-    <div class="divForm">
+    <div class="divForm mb-3">
       <label> Contraseña</label>
       <input type="password" class="form-control" placeholder="Contraseña" formControlName="pass">
     

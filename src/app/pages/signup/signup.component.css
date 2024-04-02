@@ -3,3 +3,15 @@ form{
     padding: 6rem;
     background-color: rgb(146, 98, 35);
 }
+
+input:focus {
+    outline: unset;
+}
+
+.ng-valid {
+    border-left: 3px solid green;
+}
+
+.ng-invalid {
+    border-left: 3px solid red;
+}  

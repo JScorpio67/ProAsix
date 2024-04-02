@@ -31,6 +31,14 @@ export class SignupComponent implements OnInit {
   ngOnInit():void{
   }
 
+  get nombre(){
+    return this.FormularioSignup.controls.nombre;
+  }
+
+  get apellidos(){
+    return this.FormularioSignup.controls.apellidos;
+  }
+
   get email(){
     return this.FormularioSignup.controls.email;
   }

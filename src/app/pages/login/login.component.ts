@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
     email:['ejemplo@gmail.com',[Validators.required, Validators.email]],
     pass:['',[Validators.required]],
   })
+  
   //private nombre:Router | Servicio de rutas   || inyectamos el metodo login del servicio login
   constructor(private formBuilder:FormBuilder, private router:Router, private loginServicio:LoginService ) { }
   
