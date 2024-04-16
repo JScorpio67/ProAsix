@@ -20,6 +20,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
+//import { LoginService } from './services/auth/login.service';
 
 
 @NgModule({
@@ -30,9 +31,9 @@ import { AngularFireModule } from '@angular/fire/compat';
         NavbarComponent,
         ArtistaComponent,
         LoginComponent,
-        // nuevo, prueba
         TarjetasComponent,
-        SignupComponent 
+        SignupComponent,
+        
     ],
     providers: [],
     bootstrap: [AppComponent],
