@@ -19,6 +19,7 @@ import { LoginRequest } from 'src/app/services/auth/login/loginRequest';
 
 //INYECTAMOS EN EL CONSTRUCTOR
 export class LoginComponent implements OnInit {
+  loginError:string="";
   //CREAMOS EL FORMULARIO
   loginFormulario = this.formBuilder.group({
     email: ['ejemplo@gmail.com', [Validators.required, Validators.email]],
@@ -49,18 +50,19 @@ export class LoginComponent implements OnInit {
         },
         error: (errorData) => {
           console.error(errorData);
+          this.loginError=errorData
         },
         complete: () => {
-          console.info("Login completo")
+          console.info("Login completo");
+          //NAVEGACION DEPSUES DEL LOGIN
+          this.router.navigateByUrl('/home');
+           //REINICIO DEL FORMULARIO
+          this.loginFormulario.reset();
         }
 
       })
 
-      //NAVEGACION DEPSUES DEL LOGIN
-      this.router.navigateByUrl('/home');
-
-      //REINICIO DEL FORMULARIO
-      this.loginFormulario.reset();
+      
 
     } else {
       this.loginFormulario.markAllAsTouched();

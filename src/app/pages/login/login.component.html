@@ -13,6 +13,7 @@
 </form> -->
 
 <form [formGroup]="loginFormulario">
+  <p class="text-danger">{{loginError}}</p>
   <div class="divForm">
     <label> Email </label>
     <input type="email" class="form-control"  placeholder="Enter email" formControlName="email">
