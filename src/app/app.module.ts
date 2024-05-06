@@ -18,8 +18,13 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+//FIREBASE
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
 //import { LoginService } from './services/auth/login.service';
 
 
@@ -47,9 +52,14 @@ import { AngularFireModule } from '@angular/fire/compat';
         CommonModule,
         ReactiveFormsModule,
         FormsModule,
-        AngularFireModule,
-        provideFirebaseApp(() => initializeApp({"projectId":"proyectoasix-86ff1","appId":"1:1029543546243:web:8dc69137a8f15067de7ab6","storageBucket":"proyectoasix-86ff1.appspot.com","apiKey":"AIzaSyDxcDL3rgUDHr-lMSg1QMfBnw-ze7qDxeU","authDomain":"proyectoasix-86ff1.firebaseapp.com","messagingSenderId":"1029543546243","measurementId":"G-1ZEZ4BNB22"})),
-        provideFirestore(() => getFirestore())
+        //FIREBASE
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireAuthModule,
+        AngularFirestoreModule
+
+
+        //provideFirebaseApp(() => initializeApp({"projectId":"proyectoasix-86ff1","appId":"1:1029543546243:web:8dc69137a8f15067de7ab6","storageBucket":"proyectoasix-86ff1.appspot.com","apiKey":"AIzaSyDxcDL3rgUDHr-lMSg1QMfBnw-ze7qDxeU","authDomain":"proyectoasix-86ff1.firebaseapp.com","messagingSenderId":"1029543546243","measurementId":"G-1ZEZ4BNB22"})),
+        //provideFirestore(() => getFirestore())
     ]
 })
 export class AppModule { }

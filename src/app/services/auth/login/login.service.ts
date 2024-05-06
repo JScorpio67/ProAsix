@@ -16,6 +16,8 @@ export class LoginService {
   //CREAMOS EL METODO LOGIN
   //login(formulario_input:any){ //any es muy generico
   login(formulario_input:LoginRequest): Observable<User> {
+    //src/assets/data.json
+    //url de donde cogemos los datos del usuario
     return this.http.get<User>('././assets/data.json').pipe(
       //TAP PARA EMITIR LA INFORMACION A LOS COMPONENTES SUSCRITOS
       tap( (userData : User) =>{
@@ -35,6 +37,7 @@ export class LoginService {
       //retornamos la excepcion.
     } return throwError (()=> new Error('Algo falló, intente nuevamente'));
   }
+
   //SUSCRIBCION DE LOS COMPONENTES
   get userData():Observable<User>{
     return this.currentUserData.asObservable();

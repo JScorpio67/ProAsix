@@ -7,6 +7,11 @@ form{
 input:focus {
     outline: unset;
 }
+/* cambiar divForm, cambia bruscamente */
+.divForm{
+    margin: auto;
+    padding: auto;
+}
 
 .ng-valid {
     border-left: 3px solid green;

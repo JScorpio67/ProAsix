@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
 //IMPORTAMOS LA CLASE
 import { FormBuilder, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 import { SignService } from 'src/app/services/auth/sign/sign.service';
 import { SignRequest } from 'src/app/services/auth/sign/signRequest';
 
@@ -16,13 +16,15 @@ import { SignRequest } from 'src/app/services/auth/sign/signRequest';
 })
 //INYECTAMOS EN EL CONSTRUCTOR
 export class SignupComponent implements OnInit {
+  signError:string="";
   //CREAMOS EL FORMULARIO
   FormularioSignup=this.formBuilder.group({
-    nombre:['', [Validators.required] ],
+    nombres:['', [Validators.required] ],
     apellidos:['', [Validators.required] ],
+    username:['', [Validators.required, Validators.minLength(6)]],
     email:['', [Validators.required, Validators.email]],
     edad: ['', [Validators.required]],
-    pass:['', [Validators.required] ],
+    pass:['', [Validators.required, Validators.minLength(8)] ],
   }) 
 
   //private nombre:Router | Servicio de rutas   || inyectamos el metodo login del servicio login
@@ -31,16 +33,23 @@ export class SignupComponent implements OnInit {
   ngOnInit():void{
   }
 
-  get nombre(){
-    return this.FormularioSignup.controls.nombre;
+  get nombres(){
+    return this.FormularioSignup.controls.nombres;
   }
 
   get apellidos(){
     return this.FormularioSignup.controls.apellidos;
   }
 
+  get username(){
+    return this.FormularioSignup.controls.username;
+  }
+
   get email(){
     return this.FormularioSignup.controls.email;
+  }
+  get edad(){
+    return this.FormularioSignup.controls.edad;
   }
   get password(){
     return this.FormularioSignup.controls.pass;

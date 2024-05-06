@@ -1,54 +1,42 @@
-<!-- <form [formGroup]="FormularioSignup">
-    <div class="mb-3 form-row" >
-        <div class="col">
-          <label for="exampleInputEmail1" class="form-label"> nombre</label>
-          <input type="text"  formControlName="nombre">
-        </div>
-        <div class="col">
-          <label for="exampleInputEmail1" class="form-label"> Apellidos </label>
-          <input type="text" formControlName="apellidos">
-        </div>
-    </div>
-
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label"> Email</label>
-      <input type="email" formControlName="email"  formControlName="email" >
-    </div>
-
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password"  formControlName="pass">
-    </div>
-
-    
-    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-  </form> -->
-
-
   <form [formGroup]="FormularioSignup">
-
+    <!-- <p class="text-danger">{{signError}}</p> -->
+    
     <div class="divForm mb-3">
       <label> Nombre </label>
-      <input type="text" class="form-control"  placeholder="Nombre" formControlName="nombre">
-      
-      <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="text-danger" >
-        <div *ngIf="nombre.errors?.['required']"> 
+      <input type="text" class="form-control"  placeholder="Nombre" formControlName="nombres">
+      <div *ngIf="nombres.invalid && (nombres.dirty || nombres.touched)" class="text-danger" >
+        <div *ngIf="nombres.errors?.['required']"> 
           El nombre es obligatorio
         </div>
       </div>
     </div>
-
+    <!---------------------------------------------------------------------------->
     <div class="divForm mb-3">
       <label> Apellidos </label>
       <input type="text" class="form-control"  placeholder="Apellidos" formControlName="apellidos">
       
-      <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="text-danger" >
-        <div *ngIf="nombre.errors?.['required']"> 
-          El nombre es obligatorio
+      <div *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)" class="text-danger" >
+        <div *ngIf="apellidos.errors?.['required']"> 
+          Los apellidos son obligatorios
+        </div>
+      </div>
+    </div>
+    <!---------------------------------------------------------------------------->
+    <div class="divForm mb-3">
+      <label> Username </label>
+      <input type="text" class="form-control"  placeholder="Username" formControlName="username">
+      
+      <div *ngIf="username.invalid && (username.dirty || username.touched)" class="text-danger" >
+        <div *ngIf="username.errors?.['required']"> 
+          El username es obligatorio
+        </div>
+        <div *ngIf="username.errors?.['minlength']">
+          El username debe contener al menos 6 carácteres.
         </div>
       </div>
     </div>
 
+    <!---------------------------------------------------------------------------->
     <div class="divForm mb-3">
       <label> Email </label>
       <input type="email" class="form-control"  placeholder="Enter email" formControlName="email">
@@ -62,7 +50,21 @@
         </div>  
       </div>
     </div>
-  
+  <!---------------------------------------------------------------------------->
+    <div class="divForm mb-3">
+      <label> Edad </label>
+      <input type="date" class="form-control"  placeholder="Introduce tu edad" formControlName="edad">
+
+      <div *ngIf="edad.invalid && (edad.dirty || edad.touched)" class="text-danger" >
+        <div *ngIf="edad.errors?.['required']"> 
+          El edad es obligatoria
+        </div>
+        <div *ngIf="edad.errors?.['email']">
+          El email debe tener un formato valido
+        </div>  
+      </div>
+    </div>
+  <!---------------------------------------------------------------------------->
     <div class="divForm mb-3">
       <label> Contraseña</label>
       <input type="password" class="form-control" placeholder="Contraseña" formControlName="pass">
@@ -71,11 +73,14 @@
         <div *ngIf="password.errors?.['required']"> 
           La contraseña es obligatoria
         </div>
+        <div *ngIf="password.errors?.['minlength']">
+          La contraseña debe contener al menos 8 carácteres.
+        </div>
       </div>
     </div>
-  
+  <!---------------------------------------------------------------------------->
     <div class="divForm">
-    <button type="submit" (click)="sign()" class="btn btn-primary">Iniciar Sesión</button>
+    <button type="submit" (click)="sign()" class="btn btn-primary">Registrar</button>
     </div>
   
   </form>  

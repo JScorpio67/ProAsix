@@ -17,7 +17,8 @@
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="search">Buscar</a>
-      </li>     
+      </li>    
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Tops
@@ -28,12 +29,19 @@
           <a class="dropdown-item" href="#">Top Playlists</a>
         </div>
       </li>  
+
       <li *ngIf="!userLoginOn" class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/login">Iniciar Sesión</a>
-      </li>   
+      </li>
+
       <li *ngIf="userLoginOn" class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/nohome">Cerrar Sesion</a>
-      </li>   
+      </li>  
+
+      <li *ngIf="!userLoginOn" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/signup"> Registrarse</a>
+      </li>
+
     </ul>
   
   </div>

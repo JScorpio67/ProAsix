@@ -2,6 +2,9 @@
 //DE INFO DE LOS INPUTS, LOS CUALES LUEGO SE VERIFICARAN
 export interface SignRequest {
     nombre:string,
+    apellidos:string,
     email:string,
+    username:string,
+    edad: string,
     password:string
 }
