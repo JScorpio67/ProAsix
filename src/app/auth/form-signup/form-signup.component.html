@@ -1,12 +1,12 @@
 <div class="form">
     <div class="form__container">
-      <h1>Sign up</h1>
+      <h1>Registro</h1>
       <form [formGroup]="formularioHTML" (ngSubmit)="signUp()">
         <div>
           <mat-form-field>
             <mat-label>Nombres</mat-label>
             <input matInput formControlName="names" />
-            <mat-error>This field is required</mat-error>
+            <mat-error>Este campo es obligatorio</mat-error>
           </mat-form-field>
         </div>
   
@@ -14,7 +14,7 @@
           <mat-form-field>
             <mat-label>Apellidos</mat-label>
             <input matInput formControlName="lastName" />
-            <mat-error>This field is required</mat-error>
+            <mat-error>Este campo es obligatorio</mat-error>
           </mat-form-field>
         </div>
         <div>
@@ -24,10 +24,10 @@
             <mat-error *ngIf="isEmailValid as messsage">{{ messsage }}</mat-error>
           </mat-form-field>
         </div>
-  
+
         <div>
           <mat-form-field>
-            <mat-label>Enter your password</mat-label>
+            <mat-label>Introduce tu contraseña</mat-label>
             <input
               matInput
               [type]="hide ? 'password' : 'text'"
@@ -42,7 +42,7 @@
             >
               <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
             </button>
-            <mat-error>This field is required</mat-error>
+            <mat-error>Este campo es obligatorio</mat-error>
           </mat-form-field>
         </div>
   
@@ -54,7 +54,7 @@
       <span class="small-text providers">Have Google or GitHub?</span>
       <!-- <app-button-providers /> -->
       <span class="small-text log-in-redirect"
-        >Already have an account? <a routerLink="/auth/log-in">Log in</a></span
+        >Ya estás registrado? <a routerLink="/auth/log-in">Iniciar Sesión</a></span
       >
     </div>
   </div>

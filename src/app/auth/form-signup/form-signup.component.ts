@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import {
   FormBuilder,
   FormControl,
@@ -35,10 +35,11 @@ interface interfazSignUpForm {
     MatButtonModule,
     ReactiveFormsModule,
     RouterModule,
+    CommonModule,
   ],
   selector: 'signupForm',
   templateUrl: './form-signup.component.html',
-  styles: [``]
+  styleUrls: ['./form-signup.component.css']
 })
 
 export default class NewSignUpComponent{
@@ -68,6 +69,20 @@ export default class NewSignUpComponent{
   signUp(): void {
     if (this.formularioHTML.invalid) return;
     console.log(this.formularioHTML.value)
+  }
+
+  get isEmailValid(): string | boolean {
+    const control = this.formularioHTML.get('email');
+
+    const isInvalid = control?.invalid && control.touched;
+
+    if (isInvalid) {
+      return control.hasError('required')
+        ? 'Este campo es obligatorio'
+        : 'Introduce un formato de correo valido';
+    }
+
+    return false;
   }
 
   //constructor() { }

@@ -1,0 +1,112 @@
+:root {
+    --background-color: #2e3b4e;
+    --container-background: #3b4a5e;
+    --primary-color: #1c2a3a;
+    --primary-light-color: #455a64;
+    --primary-dark-color: #0d1b2a;
+    --text-color: #ffffff;
+    --error-color: #ff6b6b;
+    --link-color: #4fc3f7;
+    --link-hover-color: #0288d1;
+  }
+  
+  /* Estilo general para el formulario */
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+  }
+  
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem;
+  }
+  
+  .form__container {
+    background: var(--container-background);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 28px;
+    color: var(--text-color);
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  
+  mat-form-field .mat-form-field-wrapper {
+    padding-bottom: 0.5rem;
+  }
+  
+  input[matInput] {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--primary-light-color);
+    background-color: var(--primary-dark-color);
+    color: var(--text-color);
+  }
+  
+  mat-error {
+    color: var(--error-color);
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: var(--primary-light-color);
+  }
+  
+  .small-text {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 14px;
+    color: var(--text-color);
+  }
+  
+  .providers,
+  .log-in-redirect {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-color);
+  }
+  
+  .log-in-redirect a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .log-in-redirect a:hover {
+    text-decoration: underline;
+    color: var(--link-hover-color);
+  }
+  
