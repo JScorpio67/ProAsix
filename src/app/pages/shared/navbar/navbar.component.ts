@@ -29,4 +29,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     //this.serviciodeSign.
   }
 
+  logOut(): void{
+
+  }
 }
