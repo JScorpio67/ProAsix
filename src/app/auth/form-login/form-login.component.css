@@ -1,0 +1,80 @@
+
+:root {
+    --primary-color: #1e1e1e;   /* Fondo oscuro */
+    --secondary-color: #333333; /* Color secundario */
+    --accent-color: #6200ea;    /* Color de acento */
+    --text-color: #ffffff;      /* Color de texto */
+    --error-color: #ff5252;     /* Color de error */
+  }
+  
+  body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+  }
+  
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form__container {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  
+  input[matInput] {
+    color: var(--text-color);
+  }
+  
+  mat-icon {
+    color: var(--text-color);
+  }
+  
+  mat-error {
+    color: var(--error-color);
+  }
+  
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+  }
+  
+  hr {
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid var(--accent-color);
+  }
+  
+  .small-text {
+    color: var(--text-color);
+    font-size: 0.875rem;
+  }
+  
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

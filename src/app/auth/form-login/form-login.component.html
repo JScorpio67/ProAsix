@@ -1,0 +1,47 @@
+<div class="form">
+    <div class="form__container">
+      <h1>Log in</h1>
+      <form [formGroup]="formularioHTML" (ngSubmit)="logIn()">
+        <div>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" />
+            <!-- <mat-error *ngIf="isEmailValid as messsage">{{ messsage }}</mat-error> -->
+          </mat-form-field>
+        </div>
+  
+        <div>
+          <mat-form-field>
+            <mat-label>Introduce tu contraseña</mat-label>
+            <input
+              matInput
+              [type]="hide ? 'password' : 'text'"
+              formControlName="password"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+            <mat-error>Este campo es obligatorio</mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div>
+          <button mat-flat-button color="accent" type="submit">Iniciar Sesión</button>
+        </div>
+      </form>
+      <hr />
+      <span class="small-text providers">Have Google or GitHub?</span>
+      <!-- <app-button-providers [isLogin]="true" /> -->
+      <span class="small-text log-in-redirect"
+        >No tienes una cuenta? Registrate
+        <a routerLink="auth/signupForm">Registrarse</a></span
+      >
+    </div>
+  </div>
+  

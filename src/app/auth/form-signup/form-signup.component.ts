@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import {
   FormBuilder,
   FormControl,
@@ -13,6 +13,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterModule } from '@angular/router';
+
+import { AuthService, Credential } from 'src/app/services/auth/firebase/auth.service';
 
 //import { AuthService, Credential } from '../../../core/services/auth.service';
 // import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
@@ -36,6 +38,7 @@ interface interfazSignUpForm {
     ReactiveFormsModule,
     RouterModule,
     CommonModule,
+    NgIf,
   ],
   selector: 'signupForm',
   templateUrl: './form-signup.component.html',
@@ -66,8 +69,25 @@ export default class NewSignUpComponent{
     }),
   });
 
+  private servicioAuth = inject(AuthService)
+
   signUp(): void {
     if (this.formularioHTML.invalid) return;
+
+    const credential : Credential = {
+      // || por si tiene un valor indefinido 
+      email: this.formularioHTML.value.email || '',
+      password: this.formularioHTML.value.password || '' ,
+    };
+
+    try {
+      this.servicioAuth.signInWithEmailAndPassword(credential);
+      
+    } catch (error) {
+      
+    }
+
+
     console.log(this.formularioHTML.value)
   }
 
