@@ -5,6 +5,7 @@
         <div>
           <mat-form-field>
             <mat-label>Nombres</mat-label>
+            <!-- asocia la etiqueta HTML con la interfaz en .ts -->
             <input matInput formControlName="names" />
             <mat-error>Este campo es obligatorio</mat-error>
           </mat-form-field>
@@ -53,8 +54,7 @@
       <hr />
       <span class="small-text providers">Have Google or GitHub?</span>
       <!-- <app-button-providers /> -->
-      <span class="small-text log-in-redirect"
-        >Ya estás registrado? <a routerLink="/auth/log-in">Iniciar Sesión</a></span
+      <span class="small-text log-in-redirect">Ya estás registrado? <a routerLink="/auth/log-in">Iniciar Sesión</a></span
       >
     </div>
   </div>

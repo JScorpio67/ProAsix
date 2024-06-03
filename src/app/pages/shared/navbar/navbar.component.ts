@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/auth/login/login.service';
 import { SignService } from 'src/app/services/auth/sign/sign.service';
-//import { signupForm } from 'src/app/auth/form-signup/form-signup.component'
+// import { signupForm } from 'src/app/auth/form-signup/'
 
 
 @Component({

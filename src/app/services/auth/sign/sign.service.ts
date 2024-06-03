@@ -29,7 +29,7 @@ export class SignService {
     } return throwError (()=> new Error('Algo falló, intente nuevamente'));
   }
 
-  //SUSCRIBCION DE LOS COMPONENTES
+  // SUSCRIBCION DE LOS COMPONENTES
   // get userData():Observable<User>{
   //   return this.currentUserData.asObservable();
   // }

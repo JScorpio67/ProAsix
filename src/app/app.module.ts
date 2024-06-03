@@ -18,20 +18,27 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 //import { FormSignupComponent } from './auth/form-signup.component'
-
+import { ButtonProviders } from './services/auth/componentes/button-providers.component'
 
 
 //FIREBASE
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
-
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
-//import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-//import { environment } from 'src/environments/environment';
-//import { getAuth, provideAuth } from '@angular/fire/auth';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { firebaseProviders } from './firebase.config';
+
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { environment } from 'src/environments/environment';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 
 //import { LoginService } from './services/auth/login.service';
 
@@ -46,7 +53,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
         LoginComponent,
         TarjetasComponent,
         SignupComponent,
-       // FormSignupComponent,
+        //FormSignupComponent,
+        
         
     ],
     providers: [
@@ -55,20 +63,44 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
         HttpClientModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatIconModule,
+        MatButtonModule,
+        MatSnackBarModule,
         NoimagePipe,
         LoadingComponent,
         LinkseguroPipe,
         CommonModule,
-        ReactiveFormsModule,
+        ButtonProviders,
+        //firebaseConfig antes era firebase!!!!!!!!!!
+        provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+        provideAuth(() => getAuth()),
+        // AppComponent,
+        // firebaseProviders,
+        // provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+        // provideAuth(() => getAuth()),
+
+        // BrowserModule,
+        // AppRoutingModule,
+        // HttpClientModule,
+
+        // ReactiveFormsModule,
         FormsModule,
+
 
         //FIREBASE
         //AngularFireModule.initializeApp(environment.firebaseConfig),
-        AngularFireAuthModule,
-        AngularFirestoreModule,
         
+        // descomentar
+        // AngularFireAuthModule,
+        // AngularFirestoreModule,
+        // descomentar
+
         //firebaseconfig
         // provideFirebaseApp(() => initializeApp({"projectId":"proyectoasix-86ff1","appId":"1:1029543546243:web:8dc69137a8f15067de7ab6","storageBucket":"proyectoasix-86ff1.appspot.com","apiKey":"AIzaSyDxcDL3rgUDHr-lMSg1QMfBnw-ze7qDxeU","authDomain":"proyectoasix-86ff1.firebaseapp.com","messagingSenderId":"1029543546243","measurementId":"G-1ZEZ4BNB22"})),
         // provideAuth(() => getAuth())
@@ -76,6 +108,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 
         //provideFirebaseApp(() => initializeApp({"projectId":"proyectoasix-86ff1","appId":"1:1029543546243:web:8dc69137a8f15067de7ab6","storageBucket":"proyectoasix-86ff1.appspot.com","apiKey":"AIzaSyDxcDL3rgUDHr-lMSg1QMfBnw-ze7qDxeU","authDomain":"proyectoasix-86ff1.firebaseapp.com","messagingSenderId":"1029543546243","measurementId":"G-1ZEZ4BNB22"})),
         //provideFirestore(() => getFirestore())
+
+        
     ]
 })
 export class AppModule { }

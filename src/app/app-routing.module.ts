@@ -7,7 +7,8 @@ import { ArtistaComponent } from './pages/artista/artista.component';
 import { NohomeComponent } from './pages/nohome/nohome.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
-//import { NewSignUpComponent } from 'src/app/auth/form-signup/form-signup.component'
+import { publicGuard } from './services/auth/guards/auth.guards';
+// import { NewSignUpComponent } from 'src/app/auth/form-signup/form-signup.component'
 
 export const routes:Routes =[
   //redireccion al inicio, si no se ha especificado la ruta
@@ -17,17 +18,24 @@ export const routes:Routes =[
   // {path:'inicio', component:NohomeComponent},
   {path:'nohome', component:NohomeComponent},
   
+  // {
+  //   path: '',
+  //   canActivate:[publicGuard],
+  //   loadComponent: () => import('./pages/nohome/nohome.component'),
+  // },
+
   //RUTA NEW LOGIN-SIGNUP
   {
     path: 'auth',
     children: [
       {
-        path: 'signupForm', //component:NewSignUpComponent
+        path: 'app-sign-up', //component:NewSignUpComponent
         loadComponent: () => import ('./auth/form-signup/form-signup.component'),
       },
 
       {
-        path: 'loginForm',
+        path: 'app-log-in',
+     // loadComponent: () => import ('./auth/form-login/form-login'),
         loadComponent: () => import ('./auth/form-login/form-login'),
       },
 
@@ -47,7 +55,7 @@ export const routes:Routes =[
   {path: 'artist/:id', component: ArtistaComponent},
   
   //PAGINA NEW FORMULARIO
-  {path:'form-signup', component:HomeComponent},
+  // {path:'form-signup', component:HomeComponent},
   
 
 

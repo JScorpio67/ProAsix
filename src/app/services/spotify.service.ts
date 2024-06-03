@@ -14,7 +14,7 @@ export class SpotifyService {
   //METODO QUE REUTILIZAREMOS PARA ABREVIAR OTROS METODOS, URL SPOTIFY   
   getQuery(query:string ){
     const headers = new HttpHeaders({
-      'Authorization' : 'Bearer BQD_HAFXLqb0EXjaXAHTa7fWSdHUgdrKzMtZlhWX3daV-Io2mpuiUpcEZ58FfyjnFcJimNOzkbKPIDUX6ZNB2NSVYVEtDT892t06dGpa-qO9tC5tNq8'   
+      'Authorization' : 'Bearer BQDZ2Mf1G58DqNkqEBR9jvJb55bycza9CmHEyup0gwWYo0InGymLzfHfQsS1jDW376e-0mGlpdeEr2DTcbCZZinWKR-FB9rc9lmrr21Sac0CSnG5OZE'   
     });
     return this.http.get(`${URL}/${query}`, {headers})
   }
@@ -27,7 +27,6 @@ export class SpotifyService {
       })
     );
   }
-
 
   //METODO ARTISTAS, PORTADAS, ETC
   getArtistas(termino:string){
@@ -42,7 +41,6 @@ export class SpotifyService {
   getInfoArtista(id:string){
     return this.getQuery(`artists/${id}`)
   }
-
 
   //METODO TRACKS
   getTopTracks(id:string) {
