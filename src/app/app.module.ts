@@ -77,6 +77,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
         LinkseguroPipe,
         CommonModule,
         ButtonProviders,
+        //CONEXION FIREBASE CON PROYECTO
         //firebaseConfig antes era firebase!!!!!!!!!!
         provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
         provideAuth(() => getAuth()),

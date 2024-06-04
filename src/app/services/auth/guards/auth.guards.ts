@@ -9,6 +9,7 @@ export const routerInjection = () => inject(Router);
 
 export const authStateObs$ = () => inject(AuthService).authState$;
 
+
 export const authGuard: CanActivateFn = () => {
   const router = routerInjection();
 

@@ -27,10 +27,17 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="auth/app-sign-up">Registrarse</a>
       </li>  
+      <div>
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+          <img style="border-radius: 100%;" *ngIf="user.photoURL" src="{{user.photoURL}}" width="30" height="30"
+              class="d-inline-block align-top" alt="">
+          {{user.email}}
+      </button>
+      </div>
 
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="" (click)= "logOut()">
-          Log out
+        Cerrar Sesión
         </a>       
       </li>   
 

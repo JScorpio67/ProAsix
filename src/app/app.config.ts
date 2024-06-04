@@ -24,8 +24,7 @@
 // }
 
 
-// CHATGPT
-// app.config.ts
+
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app-routing.module';
@@ -38,6 +37,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ReactiveFormsModule } from '@angular/forms';
+// import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+
+
+const NO_NG_MODULES = importProvidersFrom([BrowserAnimationsModule]);
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -51,7 +54,7 @@ export const appConfig: ApplicationConfig = {
       MatIconModule,
       MatButtonModule,
       MatSnackBarModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
     ),
   ],
 };
