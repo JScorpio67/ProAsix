@@ -1,0 +1,26 @@
+<div class="card text-center cardContainer" *ngIf="usuarioLogeado">
+    <div class="card-header">
+      CHAT ASIX
+    </div>
+
+    <!-- aqui se mostraran los mensajes -->
+    <div class="card-body">
+        <div>
+            <p *ngFor="let mensaje of mensajes" class="p-2"
+            [ngClass]="(usuarioLogeado.uid == mensaje.emisor)? 'enviado' : 'recibido'">
+                {{mensaje.texto}}
+            </p>
+        </div>
+    </div>
+
+    <form class="card-footer text-muted input-group" (ngSubmit)="enviarMensaje">
+            <input type="text" class="form-control" placeholder="Ingrese su mensaje" 
+            [(ngModel)]="nuevoMensaje" 
+            [ngModelOptions]="{standalone: true}">
+            <div class="input-group-append" (click)="enviarMensaje()">
+              <span class="input-group-text" id="basic-addon2">
+                <img class="imgEnviar" src="https://static-00.iconduck.com/assets.00/send-icon-2048x2048-h9h456ci.png" width="20px" alt="enviar mensaje">
+              </span>
+            </div>
+    </form>
+  </div>

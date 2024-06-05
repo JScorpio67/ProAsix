@@ -4,11 +4,13 @@ import {
     AuthProvider,
     GithubAuthProvider,
     GoogleAuthProvider,
+    User,
     UserCredential,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signInWithPopup,
 } from 'firebase/auth';
+import { Observable } from 'rxjs';
 // import { firebase } from 'firebase/compat/app';
 
 
@@ -49,8 +51,6 @@ export class AuthService{
         )
     }
 
-    
-
     //CERRAR SESION
     logOut(): Promise<void> {
       return this.auth.signOut();
@@ -79,13 +79,10 @@ export class AuthService{
     }
   }
 
-  // IngresarconGoogle(){
-  //   this.
-  // }
+  getUserLogged(): Observable<User | null>{
+    return this.authState$
+  }
 
-  // getUserLogged() {
-  //   return this.auth.authState;
-  // }
 }
 
 

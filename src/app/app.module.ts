@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { ChatComponent } from './pages/chat/chat.component';
 //import { FormSignupComponent } from './auth/form-signup.component'
 import { ButtonProviders } from './services/auth/componentes/button-providers.component'
 
@@ -56,6 +57,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
         //FormSignupComponent,
         
         
+        
     ],
     providers: [
     provideAnimationsAsync()
@@ -92,6 +94,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 
         // ReactiveFormsModule,
         FormsModule,
+        ChatComponent
 
 
         //FIREBASE

@@ -1,64 +1,55 @@
-<!--<nav class="navbar navbar-expand-sm navbar-dark bg-dark"> -->
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
-  
-    <a class="navbar-brand" href="/nohome"> <img src="assets/img/logo.png" width="30" height="30" alt="" loading="lazy"> FiestApp </a>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid"> <!-- Contenedor para alinear los elementos -->
+    <a class="navbar-brand" href="/nohome">
+      <img src="assets/img/logo.png" width="30" height="30" alt="" loading="lazy"> FiestApp
+    </a>
 
-  <!--BOTON VISTA MOVIL-->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!--BOTON VISTA MOVIL-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-  </button>
-  
-  <!--BOTONS DEL NAVBAR-->
-  <!--<div class="collapse navbar-collapse" id="navbarSupportedContent"></div>-->
-  <div class="collapse navbar-collapse"  id="navbarSupportedContent"  style="vertical-align:middle;">
-    <ul class="navbar-nav ">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="home" >Inicio</a>
-      </li>
+    </button>
 
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="search">Buscar</a>
-      </li>    
+    <!--BOTONS DEL NAVBAR-->
+    <!-- menu hamburguesa -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="home" >Inicio</a>
+        </li>
 
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="auth/app-log-in">Iniciar Sesión</a>
-      </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="search">Buscar</a>
+        </li>    
 
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="auth/app-sign-up">Registrarse</a>
-      </li>  
-      <div>
-        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
-          <img style="border-radius: 100%;" *ngIf="user.photoURL" src="{{user.photoURL}}" width="30" height="30"
-              class="d-inline-block align-top" alt="">
-          {{user.email}}
-      </button>
-      </div>
+        <ng-container *ngIf="!user; else loggedInTemplate">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="auth/app-log-in">Iniciar Sesión</a>
+          </li>
 
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="" (click)= "logOut()">
-        Cerrar Sesión
-        </a>       
-      </li>   
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="auth/app-sign-up">Registrarse</a>
+          </li>
+        </ng-container>
 
-      <!-- NAVBAR - SERVICIO OK -->
-      <!-- <li *ngIf="!userLoginOn" class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/login">Iniciar Sesión</a>
-      </li>
+        <ng-template #loggedInTemplate>
+          <li class="nav-item">
+            <!-- <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+              <img style="border-radius: 100%;" *ngIf="user?.photoURL" [src]="user?.photoURL" width="30" height="30" class="d-inline-block " alt="">
+              {{ user?.email }}
+            </button> -->
+            <a class="nav-link" routerLink="/home">
+              <img style="border-radius: 100%;" *ngIf="user?.photoURL" [src]="user?.photoURL"  alt="">
+              {{ user?.email }}
+            </a>
+          </li>
+        </ng-template>
 
-      <li *ngIf="userLoginOn" class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/nohome">Cerrar Sesion</a>
-      </li>  
-
-      <li *ngIf="!userLoginOn" class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/signup"> Registrarse</a>
-      </li> -->
-     
-
-
-
-    </ul>
-  
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="" (click)= "logOut()">
+            Cerrar Sesión
+          </a>       
+        </li>   
+      </ul>
+    </div>
   </div>
-  </nav>
-
+</nav>
