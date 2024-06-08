@@ -1,12 +1,17 @@
-<div class="card text-center cardContainer" *ngIf="usuarioLogeado">
+<div *ngIf="usuarioLogeado && !mostrarChat" class="chatIconContainer" (click)="mostrarChat=true">
+    <img src="https://cdn-icons-png.flaticon.com/512/14/14558.png" class="chatIcon" alt="">
+</div>
+
+<div class="card text-center cardContainer" *ngIf="usuarioLogeado && mostrarChat">
     <div class="card-header">
       CHAT ASIX
+      <div class="cerrarchat" (click)="mostrarChat=false">X</div>
     </div>
 
     <!-- aqui se mostraran los mensajes -->
     <div class="card-body">
-        <div>
-            <p *ngFor="let mensaje of mensajes" class="p-2"
+        <div id="contenedorMensajes" class="contenedorMensajes h-100">
+            <p *ngFor="let mensaje of mensajes" class="msj p-2"
             [ngClass]="(usuarioLogeado.uid == mensaje.emisor)? 'enviado' : 'recibido'">
                 {{mensaje.texto}}
             </p>

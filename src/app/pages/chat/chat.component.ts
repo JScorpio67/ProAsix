@@ -19,6 +19,7 @@ export class ChatComponent {
   nuevoMensaje:string="";
   // usuarioLogeado:any;
   usuarioLogeado: User | null = null; // Usa el tipo User de Firebase
+  mostrarChat = false;
   // lista de mensajes
   mensajes: any = [
     {
@@ -39,11 +40,43 @@ export class ChatComponent {
   ngOnInit(): void{
     this.authService.getUserLogged().subscribe(usuario =>{
       this.usuarioLogeado = usuario;
-    })
+    });
   }
 
   enviarMensaje(){
     console.log(this.nuevoMensaje);
-    this.nuevoMensaje = "";
+    //if para comprobar que el usuario este logeado
+    if (this.usuarioLogeado){
+      let mensaje={
+        emisor: this.usuarioLogeado.uid,
+        texto: this.nuevoMensaje
+      };
+      //añadimos el mensaje a la lista
+      this.mensajes.push(mensaje);
+
+      this.nuevoMensaje = "";
+
+
+      setTimeout(() => {
+        this.scrollToTheLastElementByClassName();
+      }, 10)
+      
+    } else {
+      console.error("Usuario no logeado")
+    }
   }
-}
+
+  scrollToTheLastElementByClassName(){
+    //obtenemos todos los mensajes
+    let elements=document.getElementsByClassName('msj');
+    if (elements.length > 0) {
+      let ultimo = elements[elements.length - 1] as HTMLElement;
+      let toppos = ultimo.offsetTop;
+      let contenedor = document.getElementById('contenedorMensajes');
+      if (contenedor && typeof toppos === 'number') {
+        contenedor.scrollTop = toppos;
+      }
+    }
+  }
+};
+
