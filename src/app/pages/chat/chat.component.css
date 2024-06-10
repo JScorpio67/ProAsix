@@ -73,5 +73,9 @@
 }
 
 .closeIcon{
-    
+    position: absolute;
+    right: .5rem;
+    cursor: pointer;
+    top: 0rem;
+
 }

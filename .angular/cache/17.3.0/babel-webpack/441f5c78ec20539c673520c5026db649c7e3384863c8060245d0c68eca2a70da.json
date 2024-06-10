@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const environment = {\n  production: true,\n  spotiUrl: 'https://api.spotify.com/v1'\n};","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

@@ -7,7 +7,10 @@
 /*font-family: 'Bungee Spice', sans-serif;*/
 body {
     background-color: rgb(119, 119, 119);
-    color: white !important;
+    color: white;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 hr {
@@ -46,13 +49,6 @@ hr {
     height: 150px;
 }
 
-/*.td-album{
-    background-color: rgb(61, 60, 59);
-    display: flex;
-    height: 150px;
-    justify-content: end;
-    align-items: center;
-}*/
 thead{
 
     text-transform: uppercase;
@@ -74,21 +70,18 @@ td{
     color: white;
 }
 
+.container {
+    min-height: 100vh; /* Asegura que el contenedor ocupe al menos la altura del viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /*FORMULARIOS, CLASES DE CONTROL DE ESTADO*/
 input:focus {
     outline: unset;
   }
-
-/* .ng-valid:not(form).ng-touched {
-    border-left: 5px rgb(0, 160, 0) ;
-}
-
-.ng-invalid:not(form).ng-touched {
-    border-left: 5px rgb(255, 21, 21) ;
-} */
-
-/* .ng-invalid {
-    border-left: 3px solid red;
-} */
+/* 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

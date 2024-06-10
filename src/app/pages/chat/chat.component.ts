@@ -44,6 +44,9 @@ export class ChatComponent {
   }
 
   enviarMensaje(){
+    if (this.nuevoMensaje=="") {
+      return;
+    }
     console.log(this.nuevoMensaje);
     //if para comprobar que el usuario este logeado
     if (this.usuarioLogeado){

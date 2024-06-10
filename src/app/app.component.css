@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Smooch+Sans:wght@600&display=swap');
 .container{
-    background-color: brown;
+    /* background-color: brown; */
+    height: 100%;
 }

@@ -1,10 +1,9 @@
-
 :root {
-    --primary-color: #1e1e1e;   /* Fondo oscuro */
-    --secondary-color: #333333; /* Color secundario */
-    --accent-color: #6200ea;    /* Color de acento */
-    --text-color: #ffffff;      /* Color de texto */
-    --error-color: #ff5252;     /* Color de error */
+  --primary-color:#1e1e1e;   /* Fondo oscuro */
+  --secondary-color:#333333; /* Color secundario */
+  --accent-color:#6200ea;    /* Color de acento */
+  --text-color:#ffffff;      /* Color de texto */
+  --error-color:#ff5252;     /* Color de error */
   }
   
   body {
@@ -25,8 +24,8 @@
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 100%;
+    /* max-width: 400px; */
+    width: 40vw;
     text-align: center;
   }
   
@@ -55,7 +54,7 @@
   button {
     width: 100%;
     padding: 0.75rem;
-    margin-top: 1rem;
+    margin-top: -1rem;
   }
   
   hr {
