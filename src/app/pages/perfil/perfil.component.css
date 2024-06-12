@@ -1,0 +1,33 @@
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .user-info {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .user-info img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .favorites-section {
+    margin-bottom: 20px;
+  }
+  
+  .favorites-list {
+    background-color: var(--primary-color);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+  }
+  

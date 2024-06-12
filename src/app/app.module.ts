@@ -41,6 +41,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from 'src/environments/environment';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 
+
 //import { LoginService } from './services/auth/login.service';
 
 
@@ -94,24 +95,8 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 
         // ReactiveFormsModule,
         FormsModule,
-        ChatComponent
+        ChatComponent,
 
-
-        //FIREBASE
-        //AngularFireModule.initializeApp(environment.firebaseConfig),
-        
-        // descomentar
-        // AngularFireAuthModule,
-        // AngularFirestoreModule,
-        // descomentar
-
-        //firebaseconfig
-        // provideFirebaseApp(() => initializeApp({"projectId":"proyectoasix-86ff1","appId":"1:1029543546243:web:8dc69137a8f15067de7ab6","storageBucket":"proyectoasix-86ff1.appspot.com","apiKey":"AIzaSyDxcDL3rgUDHr-lMSg1QMfBnw-ze7qDxeU","authDomain":"proyectoasix-86ff1.firebaseapp.com","messagingSenderId":"1029543546243","measurementId":"G-1ZEZ4BNB22"})),
-        // provideAuth(() => getAuth())
-
-
-        //provideFirebaseApp(() => initializeApp({"projectId":"proyectoasix-86ff1","appId":"1:1029543546243:web:8dc69137a8f15067de7ab6","storageBucket":"proyectoasix-86ff1.appspot.com","apiKey":"AIzaSyDxcDL3rgUDHr-lMSg1QMfBnw-ze7qDxeU","authDomain":"proyectoasix-86ff1.firebaseapp.com","messagingSenderId":"1029543546243","measurementId":"G-1ZEZ4BNB22"})),
-        //provideFirestore(() => getFirestore())
 
         
     ]

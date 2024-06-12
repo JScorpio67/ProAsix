@@ -50,9 +50,7 @@ export default class LogInComponent {
   formBuilder = inject(FormBuilder);
 
   private authService = inject(AuthService);
-
   private router = inject(Router);
-
   private _snackBar = inject(MatSnackBar);
 
   formularioHTML: FormGroup<LogInForm> = this.formBuilder.group({

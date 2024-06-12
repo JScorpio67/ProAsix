@@ -12,7 +12,7 @@ import { User } from 'src/app/services/auth/user';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  
+
   // nueva constante
   nuevasCanciones : any[]=[];
   

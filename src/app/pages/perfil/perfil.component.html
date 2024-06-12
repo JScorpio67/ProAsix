@@ -1,0 +1,29 @@
+<div class="profile-container">
+    <h1>Perfil de Usuario</h1>
+    <div class="user-info">
+      <img *ngIf="user?.photoURL" [src]="user.photoURL" alt="Foto de perfil">
+      <h2>{{ user?.displayName || user?.email }}</h2>
+    </div>
+  
+    <div class="favorites-section">
+      <h2>Artistas Favoritos</h2>
+      <div class="favorites-list" *ngFor="let artist of favoriteArtists">
+        {{ artist.name }}
+      </div>
+    </div>
+  
+    <div class="favorites-section">
+      <h2>Discos Favoritos</h2>
+      <div class="favorites-list" *ngFor="let album of favoriteAlbums">
+        {{ album.name }}
+      </div>
+    </div>
+  
+    <div class="favorites-section">
+      <h2>Canciones Favoritas</h2>
+      <div class="favorites-list" *ngFor="let song of favoriteSongs">
+        {{ song.name }}
+      </div>
+    </div>
+  </div>
+  

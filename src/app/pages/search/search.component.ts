@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { SpotifyService } from 'src/app/services/spotify.service';
 import Swal from 'sweetalert2';
-import { Router } from '@angular/router';
-import { LoadingComponent } from '../shared/loading/loading.component';
+import { UserService } from 'src/app/services/user.service';
+
 
 @Component({
   selector: 'app-search',
@@ -19,7 +19,10 @@ export class SearchComponent{
 
 
 
-  constructor(private spotify:SpotifyService) { }
+  constructor(
+    private spotify:SpotifyService,
+    private userService: UserService
+  ) { }
 
   buscar(termino:string){
     // this.spotify.getArtistas(termino).subscribe((res:any)=>{
@@ -54,6 +57,33 @@ export class SearchComponent{
 
     //this.router.navigate([`/artist`, artistaId])
   }
+  addFavoriteArtist(artist: any) {
+    this.userService.addFavoriteArtist(artist).then(() => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Added!',
+        text: 'Artist added to your favorites.',
+        allowOutsideClick: false
+      });
+    }).catch(err => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: err.message,
+        allowOutsideClick: false
+      });
+    });
+  }
+
+
+  //FAVORITOS
+  // addFavoritos(artista: any){
+  //   this.spotify.artistaFav(artista).then(() =>{
+  //     Swal.fire('¡Éxito!', 'Artista agregado a favoritos', 'success');
+  //   }).catch(err =>{
+  //     Swal.fire('Error', 'No se pudo agregar el artista a favoritos', 'error');
+  //   });
+  // }
 
 
 }

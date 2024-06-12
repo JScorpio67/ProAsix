@@ -8,6 +8,7 @@ import { NohomeComponent } from './pages/nohome/nohome.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { publicGuard } from './services/auth/guards/auth.guards';
+import { UserProfileComponent } from './pages/perfil/perfil.component'
 // import { NewSignUpComponent } from 'src/app/auth/form-signup/form-signup.component'
 
 export const routes:Routes =[
@@ -55,7 +56,7 @@ export const routes:Routes =[
   {path: 'artist/:id', component: ArtistaComponent},
   
   //PAGINA NEW FORMULARIO
-  // {path:'form-signup', component:HomeComponent},
+  {path:'perfil', component:UserProfileComponent},
   
 
 

@@ -53,9 +53,7 @@ export class AuthServiceTsService {
       //nos permite saber si el email ha sido verificado
       emailVerified: user.emailVerified,
     };
-    return userRef.set(userData, {
-      merge: true
-    });
+    return userRef.set(userData, {merge: true});
   }
 
   //METODO LOGIN
@@ -78,7 +76,7 @@ export class AuthServiceTsService {
     return this.afAuth.createUserWithEmailAndPassword(email, password)
     .then(result=>{
       result.user?.sendEmailVerification();
-      this.setUserData(result.user)
+      this.setUserData(result.user);
     }).catch(()=>{
       
     })

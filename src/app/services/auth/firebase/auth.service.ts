@@ -31,7 +31,6 @@ export class AuthService{
 
     //inyeccion, doc firebase
     private auth: Auth = inject(Auth);
-
     readonly authState$ = authState(this.auth)
 
     signUpWithEmailAndPassword(credencial:Credential): Promise<UserCredential>{
@@ -56,7 +55,6 @@ export class AuthService{
       return this.auth.signOut();
     }
 
-
     // providers GOOGLE, GITHUB
     signInWithGoogleProvider(): Promise<UserCredential> {
         const provider = new GoogleAuthProvider();
@@ -67,21 +65,21 @@ export class AuthService{
         const provider = new GithubAuthProvider();
 
         return this.callPopUp(provider);
-  }
-
-  async callPopUp(provider: AuthProvider): Promise<UserCredential> {
-    try {
-      const result = await signInWithPopup(this.auth, provider);
-
-      return result;
-    } catch (error: any) {
-      return error;
     }
-  }
 
-  getUserLogged(): Observable<User | null>{
-    return this.authState$
-  }
+    async callPopUp(provider: AuthProvider): Promise<UserCredential> {
+      try {
+        const result = await signInWithPopup(this.auth, provider);
+
+        return result;
+      } catch (error: any) {
+        return error;
+      }
+    }
+
+    getUserLogged(): Observable<User | null>{
+      return this.authState$
+    }
 
 }
 
