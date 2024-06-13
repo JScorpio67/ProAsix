@@ -1,29 +1,40 @@
-<div class="profile-container">
-    <h1>Perfil de Usuario</h1>
-    <div class="user-info">
-      <img *ngIf="user?.photoURL" [src]="user.photoURL" alt="Foto de perfil">
-      <h2>{{ user?.displayName || user?.email }}</h2>
-    </div>
-  
-    <div class="favorites-section">
-      <h2>Artistas Favoritos</h2>
-      <div class="favorites-list" *ngFor="let artist of favoriteArtists">
-        {{ artist.name }}
-      </div>
-    </div>
-  
-    <div class="favorites-section">
-      <h2>Discos Favoritos</h2>
-      <div class="favorites-list" *ngFor="let album of favoriteAlbums">
-        {{ album.name }}
-      </div>
-    </div>
-  
-    <div class="favorites-section">
-      <h2>Canciones Favoritas</h2>
-      <div class="favorites-list" *ngFor="let song of favoriteSongs">
-        {{ song.name }}
-      </div>
-    </div>
+<!-- perfil.component.html -->
+<div class="perfil-contenedor" *ngIf="user">
+  <div class="foto-cabezera">
+    <img
+      *ngIf="user.photoURL"
+      [src]="user.photoURL"
+      alt="Foto de perfil"
+      class="fotoperfil"
+    />
+    <h2>{{ user.displayName || "Nombre no disponible" }}</h2>
   </div>
-  
+
+  <div class="perfil-info">
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p *ngIf="user.providerData.length > 0">
+      <strong>Proveedor de Autenticación:</strong>
+      {{ user.providerData[0].providerId }}
+    </p>
+    <!-- Agrega más detalles según sea necesario -->
+  </div>
+  <!-- Información adicional -->
+  <p *ngIf="user.metadata.creationTime">
+    <strong>Fecha de Creación de la Cuenta:</strong>
+    {{ user.metadata.creationTime | date }}
+  </p>
+  <p *ngIf="user.metadata.lastSignInTime">
+    <strong>Última Sesión:</strong> {{ user.metadata.lastSignInTime | date }}
+  </p>
+
+  <!-- Ejemplo de otro detalle personalizado -->
+  <p *ngIf="user.phoneNumber">
+    <strong>Teléfono:</strong> {{ user.phoneNumber }}
+  </p>
+
+  <!-- Aquí puedes agregar más detalles según sea necesario -->
+</div>
+
+<div class="perfil-not-authenticated" *ngIf="!user">
+  <p>Usuario no autenticado</p>
+</div>

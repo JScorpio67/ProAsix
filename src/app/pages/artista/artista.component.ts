@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SpotifyService } from 'src/app/services/spotify.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-artista',
@@ -52,7 +53,12 @@ export class ArtistaComponent{
       this.topTracks = res;
     })
   }
-  
+
+  // addArtistToFavorites(artist: any) {
+  //   this.spotify.addFavoriteArtist(artist).then(() => {
+  //     Swal.fire('¡Éxito!', 'Artista agregado a favoritos', 'success');
+  //   });
+  // }
 
   
 }

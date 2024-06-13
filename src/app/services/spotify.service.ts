@@ -7,6 +7,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth'
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore'
 import { of } from 'rxjs'; //para observable
 
+
 const URL = environment.spotiUrl
 
 @Injectable({
@@ -17,13 +18,16 @@ export class SpotifyService {
   constructor(
     private http:HttpClient,
 
+    //autenticar usuario
     // private afAuth: AngularFireAuth,
+    //manipular db
     // private firestore: AngularFirestore,
+
   ) { }
   //METODO QUE REUTILIZAREMOS PARA ABREVIAR OTROS METODOS, URL SPOTIFY   
   getQuery(query:string ){
     const headers = new HttpHeaders({
-      'Authorization' : 'Bearer BQC4TvI2WzyXkBOpwcsOGMfRgHOO-x0MBSiv-gNn74YCWtdjFOq_ULcVZEcEA1Saym0OUTBwBl5clEWNdMzQYlrxrXsbpLVlfdiHqqpEPW8EVtKDeyQ'   
+      'Authorization' : 'Bearer BQDLLY7aa2w7KvFdxE8mydUAaId9Z-n194lq6xnzxku_dgucaRSwZtyZYxXrtw74tKk2hIU6fU-QyM4b2MW4_2YgNfEIpJkbKaW3YiYZfbDSSuf9fzY'   
     });
     return this.http.get(`${URL}/${query}`, {headers})
   }
@@ -60,17 +64,15 @@ export class SpotifyService {
     );
   }
 
-  // FIREBASE PERFIL
-  // private getUsuario(){
-  //   return this.afAuth.authState.pipe(map(user => user?.uid))
+  // private getUsuario() {
+  //   return this.afAuth.authState.pipe(map(user => user?.uid));
   // }
 
-  // //METODO ARTISTA FAV
-  // artistaFav(artista:any){
+  // addArtist(artista: any) {
   //   return this.getUsuario().pipe(
   //     switchMap(uid => {
   //       if (uid) {
-  //         const userRef = this.afs.collection('users').doc(uid);
+  //         const userRef = this.firestore.collection('users').doc(uid);
   //         return userRef.collection('favorites').doc('artists').set({
   //           [artista.id]: artista
   //         }, { merge: true });
@@ -81,43 +83,49 @@ export class SpotifyService {
   //   ).toPromise();
   // }
 
-  // //METODO ALBUM FAV
-  // albumFav(album:any){
-  //   return this.getUsuario().subscribe( uid =>{
-  //     if (uid) {
-  //       const usrRef = this.afs.collection('users').doc(uid);
-  //       usrRef.collection('favorites').doc('albums').set({
-  //         [album.id]:album
-  //       }, {merge: true});
-  //     }
-  //   });
-  // }
-
-  // //METODO CANCION FAV
-  // cancionFav(cancion:any){
-  //   return this.getUsuario().subscribe( uid =>{
-  //     if (uid) {
-  //       const usrRef = this.afs.collection('users').doc(uid);
-  //       usrRef.collection('favorites').doc('songs').set({
-  //         [cancion.id]:cancion
-  //       }, {merge: true});
-  //     }
-  //   });
-  // }
-
-  // //VOLCAR FAVORITOS
-  // getFavorites() {
+  // addAlbum(album: any) {
   //   return this.getUsuario().pipe(
   //     switchMap(uid => {
   //       if (uid) {
-  //         const usrRef = this.afs.collection('users').doc(uid);
-  //         return usrRef.collection('favorites').valueChanges();
+  //         const userRef = this.firestore.collection('users').doc(uid);
+  //         return userRef.collection('favorites').doc('albums').set({
+  //           [album.id]: album
+  //         }, { merge: true });
+  //       } else {
+  //         return of(null);
+  //       }
+  //     })
+  //   ).toPromise();
+  // }
+
+  // addTrack(cancion: any) {
+  //   return this.getUsuario().pipe(
+  //     switchMap(uid => {
+  //       if (uid) {
+  //         const userRef = this.firestore.collection('users').doc(uid);
+  //         return userRef.collection('favorites').doc('tracks').set({
+  //           [cancion.id]: cancion
+  //         }, { merge: true });
+  //       } else {
+  //         return of(null);
+  //       }
+  //     })
+  //   ).toPromise();
+  // }
+
+  // getFavoritos() {
+  //   return this.getUsuario().pipe(
+  //     switchMap(uid => {
+  //       if (uid) {
+  //         const userRef = this.firestore.collection('users').doc(uid);
+  //         return userRef.collection('favorites').valueChanges();
   //       } else {
   //         return of(null);
   //       }
   //     })
   //   );
   // }
+
 
 
 

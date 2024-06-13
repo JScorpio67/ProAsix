@@ -29,26 +29,26 @@ export class AuthService{
 
   // constructor(private auth:AngularFireAuth){ }
 
-    //inyeccion, doc firebase
-    private auth: Auth = inject(Auth);
-    readonly authState$ = authState(this.auth)
+  //inyeccion, doc firebase
+  private auth: Auth = inject(Auth);
+  readonly authState$ = authState(this.auth)
 
-    signUpWithEmailAndPassword(credencial:Credential): Promise<UserCredential>{
-        //necesita el auth (inyectado), email (string) y pass(string)
-        return createUserWithEmailAndPassword(
-            this.auth,
-            credencial.email,
-            credencial.password
-        )
-    }
+  signUpWithEmailAndPassword(credencial:Credential): Promise<UserCredential>{
+      //necesita el auth (inyectado), email (string) y pass(string)
+      return createUserWithEmailAndPassword(
+          this.auth,
+          credencial.email,
+          credencial.password
+      )
+  }
 
-    logInWithEmailAndPassword(credencial:Credential){
-        return signInWithEmailAndPassword(
-            this.auth,
-            credencial.email,
-            credencial.password
-        )
-    }
+  logInWithEmailAndPassword(credencial:Credential){
+      return signInWithEmailAndPassword(
+          this.auth,
+          credencial.email,
+          credencial.password
+      )
+  }
 
     //CERRAR SESION
     logOut(): Promise<void> {

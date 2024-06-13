@@ -1,33 +1,47 @@
-.profile-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .user-info {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .user-info img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin-bottom: 10px;
-  }
-  
-  .favorites-section {
-    margin-bottom: 20px;
-  }
-  
-  .favorites-list {
-    background-color: var(--primary-color);
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 4px;
-  }
-  
+.perfil-contenedor {
+  /* max-width: 900px; */
+  width: 60vw;
+  height: 50vh;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #021e3a;
+  border: 1px solid #01001b;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.perfil-contenedor .foto-cabezera {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.perfil-contenedor .foto-cabezera .fotoperfil {
+  width: 150px;
+  height: 150px;
+  border-radius: 20%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.perfil-container h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.perfil-container .perfil-info p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.perfil-container .perfil-info strong {
+  font-weight: bold;
+}
+
+.perfil-not-authenticated {
+  text-align: center;
+  font-size: 18px;
+  color: #999;
+  margin-top: 20px;
+}

@@ -56,6 +56,12 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
         TarjetasComponent,
         SignupComponent,
         //FormSignupComponent,
+
+        // ChatComponent,
+        // NoimagePipe,
+        // LoadingComponent,
+        // LinkseguroPipe,
+        // ButtonProviders,
         
         
         
@@ -88,17 +94,8 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
         // firebaseProviders,
         // provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
         // provideAuth(() => getAuth()),
-
-        // BrowserModule,
-        // AppRoutingModule,
-        // HttpClientModule,
-
-        // ReactiveFormsModule,
         FormsModule,
         ChatComponent,
-
-
-        
     ]
 })
 export class AppModule { }

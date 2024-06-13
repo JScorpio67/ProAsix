@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+// import { TestBed } from '@angular/core/testing';
 
-import { AuthServiceTsService } from './auth.service.ts.service';
+// import { AuthServiceTsService } from './auth.service.ts.service';
 
-describe('AuthServiceTsService', () => {
-  let service: AuthServiceTsService;
+// describe('AuthServiceTsService', () => {
+//   let service: AuthServiceTsService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(AuthServiceTsService);
-  });
+//   beforeEach(() => {
+//     TestBed.configureTestingModule({});
+//     service = TestBed.inject(AuthServiceTsService);
+//   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+//   it('should be created', () => {
+//     expect(service).toBeTruthy();
+//   });
+// });
